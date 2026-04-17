@@ -1,8 +1,8 @@
 class pin:
-    LED = 8
-    LED_ON = 0
-    LED_OFF = 1
-    RELAY = 4
+    LED = 21
+    LED_ON = 1
+    LED_OFF = 0
+    RELAY = 0
 
 class wifi:
     ssid = 'Your Wifi SSID'
