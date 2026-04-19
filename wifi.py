@@ -32,7 +32,7 @@ def connect_to_wifi():
         sleep_ms(500)
 
     if not wlan.isconnected():
-        print("Failed to connect to Wi-Fi after multiple attempts.")
+        print("Failed to connect to Wi-Fi after multiple attempts. Rebooting...")
         sleep_ms(2000)
         machine.reset()  # Reset the device to try again
     
