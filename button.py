@@ -8,10 +8,11 @@ class Button:
         self.debounce_ms = debounce_ms
         self.last_time = time.ticks_ms()
         
-        # Initial state is "released" (1)
-        self.state = 1
-        # This flag "sticks" to True once a press is detected
-        self.was_pressed = False
+        # Initial state is based on the current pin value
+        self.state = self.pin.value()
+        # This flag "sticks" to True once a press is detected, and will be reset on the next get_status() call
+        # Initialize it based on the initial state of the button
+        self.was_pressed = self.state == 0
         
         self.pin.irq(trigger=machine.Pin.IRQ_FALLING | machine.Pin.IRQ_RISING, handler=self._isr)
         
