@@ -8,8 +8,8 @@ class Button:
         self.debounce_ms = debounce_ms
         self.last_time = time.ticks_ms()
         
-        # Track the last stable state
-        self.state = self.pin.value()
+        # Initial state is "released" (1)
+        self.state = 1
         # This flag "sticks" to True once a press is detected
         self.was_pressed = False
         
